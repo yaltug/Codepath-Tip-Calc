@@ -14,6 +14,8 @@
 		F04EA8B31E77580700C8116C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F04EA8B11E77580700C8116C /* LaunchScreen.storyboard */; };
 		F04EA8BE1E77580700C8116C /* TipProfTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04EA8BD1E77580700C8116C /* TipProfTests.swift */; };
 		F04EA8C91E77580700C8116C /* TipProfUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04EA8C81E77580700C8116C /* TipProfUITests.swift */; };
+		F04EA8D71E77639C00C8116C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04EA8D61E77639C00C8116C /* SettingsViewController.swift */; };
+		F04EA8D91E77857E00C8116C /* Info.png in Resources */ = {isa = PBXBuildFile; fileRef = F04EA8D81E77857E00C8116C /* Info.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		F04EA8C41E77580700C8116C /* TipProfUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TipProfUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F04EA8C81E77580700C8116C /* TipProfUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipProfUITests.swift; sourceTree = "<group>"; };
 		F04EA8CA1E77580700C8116C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F04EA8D61E77639C00C8116C /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		F04EA8D81E77857E00C8116C /* Info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Info.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +85,7 @@
 				F04EA8BC1E77580700C8116C /* TipProfTests */,
 				F04EA8C71E77580700C8116C /* TipProfUITests */,
 				F04EA8A61E77580700C8116C /* Products */,
+				F04EA8D81E77857E00C8116C /* Info.png */,
 			);
 			sourceTree = "<group>";
 		};
@@ -100,6 +105,7 @@
 				F04EA8A81E77580700C8116C /* AppDelegate.swift */,
 				F04EA8AA1E77580700C8116C /* ViewController.swift */,
 				F04EA8AC1E77580700C8116C /* Main.storyboard */,
+				F04EA8D61E77639C00C8116C /* SettingsViewController.swift */,
 				F04EA8AF1E77580700C8116C /* Assets.xcassets */,
 				F04EA8B11E77580700C8116C /* LaunchScreen.storyboard */,
 				F04EA8B41E77580700C8116C /* Info.plist */,
@@ -235,6 +241,7 @@
 				F04EA8B31E77580700C8116C /* LaunchScreen.storyboard in Resources */,
 				F04EA8B01E77580700C8116C /* Assets.xcassets in Resources */,
 				F04EA8AE1E77580700C8116C /* Main.storyboard in Resources */,
+				F04EA8D91E77857E00C8116C /* Info.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,6 +268,7 @@
 			files = (
 				F04EA8AB1E77580700C8116C /* ViewController.swift in Sources */,
 				F04EA8A91E77580700C8116C /* AppDelegate.swift in Sources */,
+				F04EA8D71E77639C00C8116C /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
