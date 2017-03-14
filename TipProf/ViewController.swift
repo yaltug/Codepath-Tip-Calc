@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Foundation
 
 class ViewController: UIViewController {
 
@@ -16,9 +17,14 @@ class ViewController: UIViewController {
     @IBOutlet weak var tipBar: UISegmentedControl!
     @IBOutlet weak var customTipTextField: UITextField!
     @IBOutlet weak var customTipType: UISegmentedControl!
+    @IBOutlet weak var roundInfo: UILabel!
+    @IBOutlet weak var tatalView: UIView!
     
     let defaults = UserDefaults.standard
-    private var rounds = 0
+    
+    var defaultTips = [0.10, 0.18, 0.22, 1]
+    
+    private var round = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,11 +43,40 @@ class ViewController: UIViewController {
 
     @IBAction func calculateTip(_ sender: Any) {
         
-        let defaultTips = [0.10, 0.18, 0.22, 1]
+        tatalView.isHidden = false
         let customTip : Double = ((Double(customTipTextField.text!) != nil) ? Double(customTipTextField.text!)! : 1.0)
         let bill = Double(billTextField.text!) ?? 0
-        let tip = (customTipType.selectedSegmentIndex==0) ? bill * defaultTips[tipBar.selectedSegmentIndex] * (customTip/100) : bill + customTip
-        let total = bill + tip
+        var tip = 0.0
+        if(tipBar.selectedSegmentIndex==3){
+            customTipType.isHidden = false
+            customTipTextField.isHidden = false
+            if(customTipType.selectedSegmentIndex==0){
+            
+                tip = bill * (customTip/100)
+            
+            }else{
+            
+                tip = customTip
+            
+            }
+        }else{
+        
+            tip = bill * defaultTips[tipBar.selectedSegmentIndex]
+            
+        }
+
+        var total : Double = 0
+        
+        if(round==0){
+            total = bill + tip
+            roundInfo.text = "Value is not rounded"
+        }else if(round == 1){
+            total = ceil(bill+tip)
+            roundInfo.text = "Value is rounded up"
+        }else{
+            total = floor(bill+tip)
+            roundInfo.text = "Value is rounded down"
+        }
         
         tipLabel.text = String(format: "$%.2f", tip)
         totalLabel.text = String(format: "$%.2f", total)
@@ -52,9 +87,23 @@ class ViewController: UIViewController {
         super.viewWillAppear(animated)
         print("view will appear")
         round = defaults.integer(forKey: "roundValue")
-        tipBar.setTitle(String(defaults.double(forKey: "tip1")), forSegmentAt: 0)
-        tipBar.setTitle(String(defaults.double(forKey: "tip2")), forSegmentAt: 1)
-        tipBar.setTitle(String(defaults.double(forKey: "tip3")), forSegmentAt: 2)
+        if(defaults.double(forKey: "tip1") != 0.0){
+            tipBar.setTitle(String(format: "$%.0f", defaults.double(forKey: "tip1"))+"%", forSegmentAt: 0)
+            defaultTips[0] = defaults.double(forKey: "tip1")/100
+        }
+        if(defaults.double(forKey: "tip2") != 0.0){
+            tipBar.setTitle(String(format: "$%.0f", defaults.double(forKey: "tip2"))+"%", forSegmentAt: 1)
+            defaultTips[1] = defaults.double(forKey: "tip2")/100
+        }
+        if(defaults.double(forKey: "tip3") != 0.0){
+            tipBar.setTitle(String(format: "$%.0f", defaults.double(forKey: "tip3"))+"%", forSegmentAt: 2)
+            defaultTips[2] = defaults.double(forKey: "tip3")/100
+        }
+        tatalView.isHidden = true
+        customTipType.isHidden = true
+        customTipTextField.isHidden = true
+        billTextField.text = ""
+
     }
     
     override func viewDidAppear(_ animated: Bool) {

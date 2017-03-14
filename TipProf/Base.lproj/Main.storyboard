@@ -49,6 +49,9 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="calculateTip:" destination="BYZ-38-t0r" eventType="editingChanged" id="Ro3-3u-hsW"/>
+                                </connections>
                             </textField>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="AFv-Br-yyh">
                                 <rect key="frame" x="238" y="216" width="111" height="29"/>
@@ -58,6 +61,9 @@
                                     <segment title="$"/>
                                 </segments>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="calculateTip:" destination="BYZ-38-t0r" eventType="valueChanged" id="Hdq-WW-8HS"/>
+                                </connections>
                             </segmentedControl>
                             <view contentMode="scaleToFill" misplaced="YES" id="ETj-DU-erd">
                                 <rect key="frame" x="0.0" y="254" width="375" height="369"/>
@@ -127,6 +133,8 @@
                         <outlet property="billTextField" destination="N3u-6W-1OU" id="2ub-m7-DOD"/>
                         <outlet property="customTipTextField" destination="Lbw-9A-iRL" id="Qp9-k0-M0h"/>
                         <outlet property="customTipType" destination="AFv-Br-yyh" id="HdC-N1-mpn"/>
+                        <outlet property="roundInfo" destination="tdC-7F-P29" id="tXw-Oe-jBb"/>
+                        <outlet property="tatalView" destination="ETj-DU-erd" id="lyb-UC-hKE"/>
                         <outlet property="tipBar" destination="vZR-fb-Yuh" id="sHw-t7-IHt"/>
                         <outlet property="tipLabel" destination="pcP-gd-4T6" id="Qpf-G6-REh"/>
                         <outlet property="totalLabel" destination="sF8-aI-qvB" id="Ywf-Uc-z7H"/>
